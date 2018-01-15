@@ -1,0 +1,15 @@
+from player import Player
+
+playerName = input("What is your name?\n")
+player1 = Player(playerName)
+print("\nHello " + player1.get_name() + "! Welcome to Blackjack\n")
+print("Dealing cards...")
+print("................\n")
+print("................\n")
+print("................\n")
+player1.first_deal()
+print(player1.get_hand())
+player1.hit()
+print(player1.get_hand())
+player1.hit()
+print(player1.get_hand())
