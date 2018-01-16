@@ -39,7 +39,8 @@ class Player:
         self.score+=10
     elif value1 == 14:
         card1 = "A"
-        if "A" in self.hand:
+        test = self.score+11
+        if test > 21:
             self.score+=1
         else:
             self.score+=11
@@ -61,7 +62,8 @@ class Player:
         self.score+=10
     elif value2 == 14:
         card2 = "A"
-        if "A" in self.hand:
+        test = self.score+11
+        if test > 21:
             self.score+=1
         else:
             self.score+=11
@@ -92,7 +94,8 @@ class Player:
         self.score+=10
     elif value == 14:
         card = "A"
-        if "A" in self.hand:
+        test = self.score+11
+        if test > 21:
             self.score+=1
         else:
             self.score+=11
@@ -109,4 +112,4 @@ class Player:
 
   # Player get_score accessor method
   def get_score(self):
-      return self.score
+    return str(self.score)
