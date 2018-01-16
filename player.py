@@ -113,3 +113,13 @@ class Player:
   # Player get_score accessor method
   def get_score(self):
     return str(self.score)
+
+  def get_user_string(self):
+     s = ""
+     for i in range(len(self.hand)):
+        s+="[" + self.hand[i] + "] "
+     return s
+
+  def get_cpu_string(self):
+      s = "[" + self.hand[0] + "] []"
+      return s
