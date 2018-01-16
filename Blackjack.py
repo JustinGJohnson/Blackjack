@@ -1,7 +1,5 @@
 # import Player class from player.py
 from player import Player
-# import Card class from card.py
-from card import Card
 
 # initiate game by getting name input from user
 playerName = input("What is your name?\n")
