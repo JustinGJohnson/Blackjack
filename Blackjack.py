@@ -85,11 +85,11 @@ def print_data():
 def final_logic():
     # final logic of game
     if user.get_score() > cpu.get_score():
-        ui.message("You win!\n")
+        return "You win!\n"
     elif user.get_score() < cpu.get_score():
-        ui.message("You lose! Good day sir!\n")
+        return "You lose! Good day sir!\n"
     elif user.get_score() == cpu.get_score():
-        ui.message("Tie!\n")
+        return "Tie!\n"
 
 
 def handle_choice(choice):
@@ -117,7 +117,7 @@ def main():
 
     cpu_hits()
     print_data()
-    final_logic()
+    final = final_logic()
 
 
 if __name__ == '__main__':
