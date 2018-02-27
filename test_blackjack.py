@@ -21,43 +21,54 @@ class TestBlackJack(unittest.TestCase):
         self.assertTrue(user.get_score() <= str(21))
         self.assertTrue(cpu.get_score() <= str(21))
 
-    def test_final_logic(self):
+    def test_player_hit(self):
+
+        # test the hit function within the player class to test that it is giving
+        # a new card and adding that value to the score
+        new = player.Player("You")
+        new.first_deal()
+        score = new.get_score()
+        new.hit()
+        self.assertTrue(new.get_score() > score)
+
+
+
+#    def test_final_logic(self):
 
         # simulate a game all the way to the end, test that the winner is correctly identified
-        playa = player.Player("You")
-        computa = player.Player("CPU")
-        playa.first_deal()
-        computa.first_deal()
-
-        quit = "q"
-        choice = None
-
-        Blackjack.first_deal()
-
-        while choice != "s":
-            choice = ui.hit_menu()
-            Blackjack.handle_choice(choice)
-
-        Blackjack.cpu_hits()
-        Blackjack.print_data()
-
-        expected = Blackjack.final_logic()
-
-        win = "You win!\n"
-        lose = "You lose! Good day sir!\n"
-        tie = "Tie!\n"
-
-        if user.get_score() > cpu.get_score():
-            self.assertEqual(expected, win)
-        elif user.get_score() < cpu.get_score():
-            self.assertEqual(expected, lose)
-        elif user.get_score() == cpu.get_score():
-            if len(user.get_hand()) < len(cpu.get_hand()):
-                self.assertEqual(expected, lose)
-            elif len(user.get_hand()) > len(cpu.get_hand()):
-                self.assertEqual(expected, win)
-            else:
-                self.assertEqual(expected, tie)
+#        playa = player.Player("You")
+#        computa = player.Player("CPU")
+#        playa.first_deal()
+#        computa.first_deal()
+#
+#        quit = "q"
+#      choice = None
+#
+#        Blackjack.first_deal()
+#
+#        while choice != "s":
+#            choice = ui.hit_menu()
+#            Blackjack.handle_choice(choice)
+#        Blackjack.cpu_hits()
+#        Blackjack.print_data()
+#
+#        expected = Blackjack.final_logic()
+#
+#        win = "You win!\n"
+#        lose = "You lose! Good day sir!\n"
+#        tie = "Tie!\n"
+#
+#        if user.get_score() > cpu.get_score():
+#            self.assertEqual(expected, win)
+#        elif user.get_score() < cpu.get_score():
+#            self.assertEqual(expected, lose)
+#        elif user.get_score() == cpu.get_score():
+#            if len(user.get_hand()) < len(cpu.get_hand()):
+#                self.assertEqual(expected, lose)
+#            elif len(user.get_hand()) > len(cpu.get_hand()):
+#                self.assertEqual(expected, win)
+#            else:
+#                self.assertEqual(expected, tie)
 
 
 if __name__ == '__main__':
