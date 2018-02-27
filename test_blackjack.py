@@ -17,6 +17,7 @@ class TestBlackJack(unittest.TestCase):
         self.assertTrue(user.get_score() <= str(21))
         self.assertTrue(cpu.get_score() <= str(21))
 
+    def test_hit_sequence():
 
 
 if __name__ == '__main__':

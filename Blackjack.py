@@ -79,7 +79,7 @@ def print_data():
 
     #check for dealer bust
     if int(cpu.get_score()) > 21:
-        pui.message("\nThe dealer busts! You win!\n")
+        ui.message("\nThe dealer busts! You win!\n")
         exit(0)
 
 def final_logic():
