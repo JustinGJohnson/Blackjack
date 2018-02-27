@@ -6,7 +6,6 @@ def hit_menu():
     print('''
         h. hit
         s. stay
-        q. quit
     ''')
 
     choice = input("Enter your selection: ")
