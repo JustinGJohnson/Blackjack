@@ -66,30 +66,30 @@ def cpu_hits():
 
 def print_data():
     # user data
-    print(user.get_name() + "\n")
-    print("Hand: ")
-    print(user.get_user_string())
-    print("Score: \n" + user.get_score() + "\n")
+    ui.message(user.get_name() + "\n")
+    ui.message("Hand: ")
+    ui.message(user.get_user_string())
+    ui.message("Score: \n" + user.get_score() + "\n")
 
     # cpu data
-    print(cpu.get_name() + "\n")
-    print("Hand: ")
-    print(cpu.get_user_string())
-    print("Score: \n" + cpu.get_score() + "\n")
+    ui.message(cpu.get_name() + "\n")
+    ui.message("Hand: ")
+    ui.message(cpu.get_user_string())
+    ui.message("Score: \n" + cpu.get_score() + "\n")
 
     #check for dealer bust
     if int(cpu.get_score()) > 21:
-        print("\nThe dealer busts! You win!\n")
+        pui.message("\nThe dealer busts! You win!\n")
         exit(0)
 
 def final_logic():
     # final logic of game
     if user.get_score() > cpu.get_score():
-        print("You win!\n")
+        ui.message("You win!\n")
     elif user.get_score() < cpu.get_score():
-        print("You lose! Good day sir!\n")
+        ui.message("You lose! Good day sir!\n")
     elif user.get_score() == cpu.get_score():
-        print("Tie!\n")
+        ui.message("Tie!\n")
 
 
 def handle_choice(choice):
@@ -101,7 +101,7 @@ def handle_choice(choice):
         ui.message("You stay")
 
     else:
-        print("Either hit (h) or stay (s)")
+        ui.message("Either hit (h) or stay (s)")
 
 
 def main():
